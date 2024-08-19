@@ -1,5 +1,6 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import {Carousel} from 'react-bootstrap';
+import Button from '../Home/Button';
 import "../../assets/Styles/HeroSection.css";
 import img1 from "../../assets/Img/1.jpeg";
 import img2 from "../../assets/Img/2.jpeg";
@@ -7,14 +8,17 @@ import img3 from "../../assets/Img/3.jpeg";
 
 const HeroSection = () => {
   return (
-    <Carousel interval={3000}>
+    <Carousel interval={5000} fade>
       <Carousel.Item>
         <div className="carousel-image-container">
           <img className="d-block w-100" src={img1} alt="First slide" />
           <div className="overlay"></div>
           <Carousel.Caption className="centered-caption">
-            <h2>Bienvenido a la Clínica</h2>
-            <p>Atención médica de calidad a tu alcance.</p>
+            <h2 className='texto-imagen'>Bienvenido a la Clínica</h2>
+            <p className='texto-imagen'>Atención médica de calidad a tu alcance.</p>
+            <a href="">
+              <Button text = {"Conocer mas"} />
+            </a>
           </Carousel.Caption>
         </div>
       </Carousel.Item>
@@ -24,8 +28,9 @@ const HeroSection = () => {
           <img className="d-block w-100" src={img2} alt="Second slide" />
           <div className="overlay"></div>
           <Carousel.Caption className="centered-caption">
-            <h2>Nuestros Servicios</h2>
-            <p>Especialidades médicas adaptadas a tus necesidades.</p>
+            <h2 className='texto-imagen'>Nuestros Servicios</h2>
+            <p className='texto-imagen'>Especialidades médicas adaptadas a tus necesidades.</p>
+            <a href=""><Button text = {"Ver servicios"} /></a>
           </Carousel.Caption>
         </div>
       </Carousel.Item>
@@ -35,8 +40,9 @@ const HeroSection = () => {
           <img className="d-block w-100" src={img3} alt="Third slide" />
           <div className="overlay"></div>
           <Carousel.Caption className="centered-caption">
-            <h2>Solicita tu Turno Ahora</h2>
-            <p>Fácil y rápido, agenda tu cita en línea.</p>
+            <h2 className='texto-imagen'>Solicita tu Turno Ahora</h2>
+            <p className='texto-imagen'>Fácil y rápido, agenda tu cita en línea.</p>
+            <a href=""><Button text = {"Ver Turnos"} /></a>
           </Carousel.Caption>
         </div>
       </Carousel.Item>

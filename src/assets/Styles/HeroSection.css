@@ -1,27 +1,26 @@
 .carousel-item {
     position: relative;
   }
-  
   .carousel-image-container {
     position: relative;
+    height: 100%;
+    overflow: hidden;
   }
-  
   .carousel-image-container .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(8, 8, 8, 0.692); /* Fondo oscuro semitransparente */
+    background: rgba(0, 0, 0, 0.785); /* Fondo oscuro semitransparente */
     z-index: 1;
   }
   .carousel-image-container img {
-    width: 100%;
-    height: auto; /* Mantiene la proporción */
-    max-height: 40rem; /* Ajusta la altura máxima deseada */
+    width: 100%; /* Mantiene la proporción */
+    height: auto;
+    max-height: 45rem; /* Ajusta la altura máxima deseada */
     object-fit: cover; /* Cubre el área del contenedor manteniendo las proporciones */
   }
-  
   .centered-caption {
     position: absolute;
     top: 50%;
@@ -33,14 +32,74 @@
     opacity: 0;
     transition: opacity 1.5s ease-in-out; /* Control de la animación de aparición */
   }
+  .texto-imagen{
+    /* font-weight: 700; */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .carousel-caption h2{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .carousel-caption p{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+@media (max-width: 768px) {
+  .carousel-caption h2 {
+    font-size: 2rem;
+  }
   
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+}
   .carousel-item.active .centered-caption {
     opacity: 1;
     transition: opacity 1.5s ease-in-out; /* Fade-in para texto visible */
   }
-  
   .carousel-item .centered-caption {
     opacity: 0;
     transition: opacity 1.5s ease-in-out; /* Fade-out para texto invisible */
   }
+  @media (max-width: 768px) {
+    .carousel-caption h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .carousel-caption p {
+      font-size: 1.2rem;
+      margin-top: 0.1rem;
+      font-weight: 700;
+    }
+    
+    .carousel-image-container img {
+      max-height: 20rem; /* Ajusta la altura máxima de las imágenes para pantallas pequeñas */
+    }
   
+    .carousel-caption {
+      padding: 0 1rem; /* Añade un poco de padding lateral para evitar que el texto toque los bordes */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-caption h2 {
+      font-size: 1rem;
+    }
+    
+    .carousel-caption p {
+      font-size: .6rem;
+      margin-bottom: .2rem;
+      font-weight: 300;
+    }
+  
+    .carousel-image-container img {
+      max-height: 15rem;
+    }
+  
+    .carousel-caption {
+      padding: 0 0.5rem;
+    }
+  }
