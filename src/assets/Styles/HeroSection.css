@@ -1,0 +1,46 @@
+.carousel-item {
+    position: relative;
+  }
+  
+  .carousel-image-container {
+    position: relative;
+  }
+  
+  .carousel-image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 8, 0.692); /* Fondo oscuro semitransparente */
+    z-index: 1;
+  }
+  .carousel-image-container img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción */
+    max-height: 40rem; /* Ajusta la altura máxima deseada */
+    object-fit: cover; /* Cubre el área del contenedor manteniendo las proporciones */
+  }
+  
+  .centered-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Control de la animación de aparición */
+  }
+  
+  .carousel-item.active .centered-caption {
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out; /* Fade-in para texto visible */
+  }
+  
+  .carousel-item .centered-caption {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Fade-out para texto invisible */
+  }
+  
