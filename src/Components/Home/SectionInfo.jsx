@@ -2,7 +2,9 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../../assets/Styles/Section1.css"; // Asegúrate de que este archivo CSS contiene los estilos específicos para este componente
+import "../../assets/Styles/Section1.css"; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeartbeat, faTooth, faBrain, faChild, faFemale} from '@fortawesome/free-solid-svg-icons';
 
 const SectionInfo = () => {
   const settings = {
@@ -32,28 +34,34 @@ const SectionInfo = () => {
   };
 
   const services = [
-    { title: 'Cardiología', description: 'Servicios de cardiología avanzada.' },
-    { title: 'Odontología', description: 'Cuidado dental para toda la familia.' },
-    { title: 'Neurología', description: 'Tratamiento para enfermedades neurológicas.' },
-    { title: 'Pediatría', description: 'Atención médica para niños y adolescentes.' },
-    { title: 'Ginecología', description: 's problemas del suelo pelviano' },
-    { title: 'Dermatología', description: 'Tratamiento para enfermedades de la piel.' },
+    { title: 'Cardiología', description: 'Servicios de cardiología avanzada.', icon: faHeartbeat , size: "2xl"},
+    { title: 'Odontología', description: 'Cuidado dental para toda la familia.', icon: faTooth , size: "2xl"},
+    { title: 'Neurología', description: 'Tratamiento para enfermedades neurológicas.', icon: faBrain, size: "2xl" },
+    { title: 'Pediatría', description: 'Atención médica para niños y adolescentes.', icon: faChild , size: "2xl"},
+    { title: 'Ginecología', description: 'Tratamiento para problemas del suelo pelviano', icon: faFemale , size: "2xl"},
   ];
 
   return (
-    <div className='contenedor-section'>
-    <div className="container service-carousel">
-      <h2 className="text-center fw-bold">Servicios y Especialidades medicas</h2>
-      <h6 className="text-center mt-3 fw-bold"><span style={{color: 'gray'}}>Confiados en que la mejor prevención es un diagnóstico temprano, sumamos servicios, equipamiento y especialidades médicas.</span></h6>
-      <Slider {...settings}>
-        {services.map((service, index) => (
-          <div key={index} className="service-item mt-2 border-0">
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-          </div>
-        ))}
-      </Slider>
-    </div>
+    <div className='contenedor-section' id='section-info'>
+      <div className="background-text">Excelencia Médica, Cuidado Integral</div>
+      <div className='titulos mb-5'>
+        <h2 className="text-center fw-bold ">Servicios <span id='span-title'> y Especialidades médicas </span></h2>
+        <p className="text-center fw-bold"><span id='span-subtitle'>Confiados en que la mejor prevención es un diagnóstico temprano, sumamos servicios, equipamiento y especialidades médicas.</span></p>
+        <hr />
+        </div>
+      <div className="container service-carousel">
+        <Slider {...settings}>
+          {services.map((service, index) => (
+            <div key={index} className="service-item mt-5">
+              <div className="service-icon">
+                <FontAwesomeIcon icon ={service.icon} size={service.size} />
+              </div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

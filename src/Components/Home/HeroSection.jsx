@@ -30,7 +30,7 @@ const HeroSection = () => {
           <Carousel.Caption className="centered-caption">
             <h2 className='texto-imagen'>Nuestros Servicios</h2>
             <p className='texto-imagen'>Especialidades médicas adaptadas a tus necesidades.</p>
-            <a href=""><Button text = {"Ver servicios"} /></a>
+            <a href="#section-info"><Button text = {"Ver servicios"} /></a>
           </Carousel.Caption>
         </div>
       </Carousel.Item>

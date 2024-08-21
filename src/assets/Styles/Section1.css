@@ -1,12 +1,15 @@
 .service-carousel {
-    padding: 50px 0;
+    position: relative;
+    z-index: 2;
   }
   
   .service-item {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    background-color: #f9f8f8;
+    padding: 1.5rem;
+    box-shadow: 0 20px 20px rgba(40, 39, 39, 0.1);
     text-align: center;
+    max-height: 15rem;
+    
   }
   
   .service-item h3 {
@@ -17,6 +20,87 @@
   .service-item p {
     font-size: 1rem;
   }
-.contenedor-section{
-    background-color: rgb(195, 209, 222);
-}  
+#span-title{
+  color: lightskyblue;
+}
+#span-subtitle{
+  color: lightskyblue;
+  font-size: 1.1rem;
+}
+.slick-prev:before {
+  color: rgb(182, 221, 246); 
+  font-size: 1.5rem;
+}
+
+.slick-next:before {
+  color: rgb(182, 221, 246); 
+  font-size: 1.5rem;
+}
+
+
+.contenedor-section {
+  position: relative;
+  padding: 30px 0;
+  background-color: #f7f7f7; 
+}
+
+.background-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px; 
+  color: rgba(43, 42, 42, 0.1); 
+  white-space: nowrap;
+  z-index: 99;
+  pointer-events: none;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+.service-icon {
+    font-size: 30px;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+
+@media (max-width: 780px) {
+  .background-text {
+    font-size: 25px;
+  }
+
+  .service-item {
+    padding: 10px;
+  }
+
+  .service-item h3 {
+    font-size: 2rem;
+  }
+
+  .service-item p {
+    font-size: 0.2rem;
+  }
+}
+@media (max-width: 1000px) {
+  .background-text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .background-text {
+    font-size: 1.5rem;
+    margin-top: 1.3rem;
+  }
+  .service-item p {
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .service-item h3 {
+    font-size: 1.4rem;
+  }
+  .titulos #span-subtitle{
+    font-size: .8rem;
+  }
+}
