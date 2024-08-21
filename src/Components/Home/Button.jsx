@@ -5,5 +5,4 @@ const Button = ({text}) => {
     <button className='Btn-HeroSection'>{ text } </button>
   )
 }
-
 export default Button

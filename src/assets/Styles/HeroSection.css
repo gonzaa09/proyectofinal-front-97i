@@ -18,7 +18,7 @@
   .carousel-image-container img {
     width: 100%; /* Mantiene la proporción */
     height: auto;
-    max-height: 45rem; /* Ajusta la altura máxima deseada */
+    max-height: 57rem; /* Ajusta la altura máxima deseada */
     object-fit: cover; /* Cubre el área del contenedor manteniendo las proporciones */
   }
   .centered-caption {
