@@ -4,19 +4,16 @@
   }
   
   .service-item {
-    background-color: #f9f8f8;
+    background-color: #fbfafa;
     padding: 1.5rem;
     box-shadow: 0 20px 20px rgba(40, 39, 39, 0.1);
     text-align: center;
-    max-height: 15rem;
-    
+    max-height: 20rem;
   }
   
   .service-item h3 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
   }
-  
   .service-item p {
     font-size: 1rem;
   }
@@ -27,11 +24,12 @@
   color: lightskyblue;
   font-size: 1.1rem;
 }
+
+
 .slick-prev:before {
   color: rgb(182, 221, 246); 
   font-size: 1.5rem;
 }
-
 .slick-next:before {
   color: rgb(182, 221, 246); 
   font-size: 1.5rem;
@@ -53,7 +51,6 @@
   color: rgba(43, 42, 42, 0.1); 
   white-space: nowrap;
   z-index: 99;
-  pointer-events: none;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -67,7 +64,7 @@
 
 @media (max-width: 780px) {
   .background-text {
-    font-size: 25px;
+    font-size: 1.6rem;
   }
 
   .service-item {
@@ -79,7 +76,7 @@
   }
 
   .service-item p {
-    font-size: 0.2rem;
+    font-size: 0.7rem;
   }
 }
 @media (max-width: 1000px) {
@@ -94,11 +91,11 @@
     margin-top: 1.3rem;
   }
   .service-item p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: bold;
   }
   .service-item h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .titulos #span-subtitle{
     font-size: .8rem;

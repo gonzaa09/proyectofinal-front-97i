@@ -16,10 +16,10 @@
     z-index: 1;
   }
   .carousel-image-container img {
-    width: 100%; /* Mantiene la proporción */
+    width: 100%; 
     height: auto;
-    max-height: 57rem; /* Ajusta la altura máxima deseada */
-    object-fit: cover; /* Cubre el área del contenedor manteniendo las proporciones */
+    max-height: 57rem; 
+    object-fit: cover; 
   }
   .centered-caption {
     position: absolute;
@@ -30,10 +30,9 @@
     color: white;
     text-align: center;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out; /* Control de la animación de aparición */
+    transition: opacity 1.5s ease-in-out; 
   }
   .texto-imagen{
-    /* font-weight: 700; */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   .carousel-caption h2{
@@ -57,11 +56,11 @@
 }
   .carousel-item.active .centered-caption {
     opacity: 1;
-    transition: opacity 1.5s ease-in-out; /* Fade-in para texto visible */
+    transition: opacity 1.5s ease-in-out; 
   }
   .carousel-item .centered-caption {
     opacity: 0;
-    transition: opacity 1.5s ease-in-out; /* Fade-out para texto invisible */
+    transition: opacity 1.5s ease-in-out; 
   }
   @media (max-width: 768px) {
     .carousel-caption h2 {
@@ -76,11 +75,11 @@
     }
     
     .carousel-image-container img {
-      max-height: 20rem; /* Ajusta la altura máxima de las imágenes para pantallas pequeñas */
+      max-height: 20rem; 
     }
   
     .carousel-caption {
-      padding: 0 1rem; /* Añade un poco de padding lateral para evitar que el texto toque los bordes */
+      padding: 0 1rem; 
     }
   }
   
@@ -101,5 +100,50 @@
   
     .carousel-caption {
       padding: 0 0.5rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .carousel,
+    .carousel-inner,
+    .carousel-item,
+    .carousel-image-container {
+      height: 100vh; /* Full viewport height */
+      width: 100vw; /* Full viewport width */
+    }
+  
+    .carousel-image-container img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      max-height: none; /* Remove the max-height constraint */
+    }
+  
+    .centered-caption {
+      padding: 4rem;
+      width: 90%; /* Adjust width for better readability */
+    }
+  
+    .carousel-caption h2 {
+      font-size: 1.8rem; /* Slightly larger than your smallest size */
+      margin-bottom: 1rem;
+    }
+  
+    .carousel-caption p {
+      font-size: 1rem; /* Slightly larger than your smallest size */
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-caption h2 {
+      font-size: 1.5rem;
+    }
+  
+    .carousel-caption p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
     }
   }
