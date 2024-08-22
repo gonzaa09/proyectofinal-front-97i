@@ -27,7 +27,7 @@
   
   @media (max-width: 576px) {
     .Btn-HeroSection {
-      font-size: .7rem;
-      padding: .2rem .5rem; 
+      font-size: 1rem;
+      padding: .5rem .9rem; 
     }
   }

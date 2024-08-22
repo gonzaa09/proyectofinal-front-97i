@@ -17,7 +17,7 @@ const HeroSection = () => {
             <h2 className='texto-imagen'>Bienvenido a la Clínica</h2>
             <p className='texto-imagen'>Atención médica de calidad a tu alcance.</p>
             <a href="">
-              <Button text = {"Conocer mas"} />
+              <Button text = {"Conocer mas"} className="Btn-carousel"/>
             </a>
           </Carousel.Caption>
         </div>
@@ -30,7 +30,7 @@ const HeroSection = () => {
           <Carousel.Caption className="centered-caption">
             <h2 className='texto-imagen'>Nuestros Servicios</h2>
             <p className='texto-imagen'>Especialidades médicas adaptadas a tus necesidades.</p>
-            <a href="#section-info"><Button text = {"Ver servicios"} /></a>
+            <a href="#section-info"><Button text = {"Ver servicios"} className="Btn-carousel"/></a>
           </Carousel.Caption>
         </div>
       </Carousel.Item>
@@ -42,7 +42,7 @@ const HeroSection = () => {
           <Carousel.Caption className="centered-caption">
             <h2 className='texto-imagen'>Solicita tu Turno Ahora</h2>
             <p className='texto-imagen'>Fácil y rápido, agenda tu cita en línea.</p>
-            <a href=""><Button text = {"Ver Turnos"} /></a>
+            <a href=""><Button text = {"Ver Turnos"} className="Btn-carousel"/></a>
           </Carousel.Caption>
         </div>
       </Carousel.Item>

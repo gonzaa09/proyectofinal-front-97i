@@ -82,45 +82,25 @@
       padding: 0 1rem; 
     }
   }
-  
-  @media (max-width: 576px) {
-    .carousel-caption h2 {
-      font-size: 1rem;
-    }
-    
-    .carousel-caption p {
-      font-size: .6rem;
-      margin-bottom: .2rem;
-      font-weight: 300;
-    }
-  
-    .carousel-image-container img {
-      max-height: 15rem;
-    }
-  
-    .carousel-caption {
-      padding: 0 0.5rem;
-    }
-  }
   @media (max-width: 768px) {
     .carousel,
     .carousel-inner,
     .carousel-item,
     .carousel-image-container {
-      height: 100vh; /* Full viewport height */
-      width: 100vw; /* Full viewport width */
+      height: 100vh; 
+      width: 100vw; 
     }
   
     .carousel-image-container img {
       height: 100%;
       width: 100%;
       object-fit: cover;
-      max-height: none; /* Remove the max-height constraint */
+      max-height: none; 
     }
   
     .centered-caption {
       padding: 4rem;
-      width: 90%; /* Adjust width for better readability */
+      width: 90%; 
     }
   
     .carousel-caption h2 {
@@ -138,11 +118,11 @@
   
   @media (max-width: 576px) {
     .carousel-caption h2 {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
   
     .carousel-caption p {
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-bottom: 0.5rem;
       font-weight: 300;
     }
