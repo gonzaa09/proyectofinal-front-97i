@@ -1,14 +1,43 @@
+import React, { useState } from 'react';
+import FormularioAgregar from './components/FormularioAgregar';
+import TablaPacientes from './components/TablaPacientes';
 
-import './App.css'
+const App = () => {
+    const [pacientes, setPacientes] = useState([]);
+    const [pacientesAceptados, setPacientesAceptados] = useState([]);
+    const [pacientesRechazados, setPacientesRechazados] = useState([]);
 
-function App() {
-  const [count, setCount] = useState(0)
+    const agregarPaciente = (nuevoPaciente) => {
+        setPacientes([...pacientes, nuevoPaciente]);
+    };
 
-  return (
-    <>
-  
-    </>
-  )
-}
+    const aceptarPaciente = (id) => {
+        const pacienteAceptado = pacientes.find(paciente => paciente.id === id);
+        setPacientes(pacientes.filter(paciente => paciente.id !== id));
+        setPacientesAceptados([...pacientesAceptados, pacienteAceptado]);
+    };
 
-export default App
+    const rechazarPaciente = (id) => {
+        const pacienteRechazado = pacientes.find(paciente => paciente.id === id);
+        setPacientes(pacientes.filter(paciente => paciente.id !== id));
+        setPacientesRechazados([...pacientesRechazados, pacienteRechazado]);
+    };
+
+    return (
+        <div className="container">
+            <h1 className="text-center my-4">Gestión de Pacientes</h1>
+            <FormularioAgregar onAgregar={agregarPaciente} />
+            <h2>Pacientes Pendientes</h2>
+            <TablaPacientes pacientes={pacientes} onAceptar={aceptarPaciente} onRechazar={rechazarPaciente} />
+            <h2>Pacientes Aceptados</h2>
+            <TablaPacientes pacientes={pacientesAceptados} />
+            <h2>Pacientes Rechazados</h2>
+            <TablaPacientes pacientes={pacientesRechazados} />
+        </div>
+    );
+};
+
+export default App;
+
+
+
