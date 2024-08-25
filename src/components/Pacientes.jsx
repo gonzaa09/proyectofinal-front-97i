@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Paciente = ({ paciente, onAceptar, onRechazar }) => {
     return (
         <tr>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import FormularioAgregar from './components/FormularioAgregar';
-import TablaPacientes from './components/TablaPacientes';
+import FormularioAgregar from '../src/components/Formulario';
+import TablaPacientes from '../src/components/TablaPacientes';
 
 const App = () => {
     const [pacientes, setPacientes] = useState([]);

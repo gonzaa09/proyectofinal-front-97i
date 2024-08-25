@@ -1,123 +1,76 @@
 import React, { useState } from 'react';
 
 const FormularioAgregar = ({ onAgregar }) => {
-    const [nombre, setNombre] = useState('');
-    const [apellido, setApellido] = useState('');
-    const [email, setEmail] = useState('');
-    const [dni, setDni] = useState('');
-    const [tel, setTel] = useState('');
-    const [consulta, setConsulta] = useState('');
-    const [turno, setTurno] = useState('');
+    const [formData, setFormData] = useState({
+        nombre: '',
+        apellido: '',
+        email: '',
+        dni: '',
+        tel: '',
+        consulta: '',
+        turno: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const nuevoPaciente = {
-            id: Date.now(),
-            nombre,
-            apellido,
-            email,
-            dni,
-            tel,
-            consulta,
-            turno
+            ...formData,
+            id: new Date().getTime()
         };
         onAgregar(nuevoPaciente);
-        setNombre('');
-        setApellido('');
-        setEmail('');
-        setDni('');
-        setTel('');
-        setConsulta('');
-        setTurno('');
+        setFormData({
+            nombre: '',
+            apellido: '',
+            email: '',
+            dni: '',
+            tel: '',
+            consulta: '',
+            turno: ''
+        });
     };
 
     return (
-        <form onSubmit={handleSubmit} className="mb-4">
-            <div className="form-row">
-                <div className="form-group col-md-6">
-                    <label htmlFor="nombre">Nombre</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="nombre"
-                        value={nombre}
-                        onChange={(e) => setNombre(e.target.value)}
-                        placeholder="Nombre"
-                    />
+        <div className="d-flex justify-content-center mt-4">
+            <form className="p-4 rounded bg-light" onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label htmlFor="Nombre1" className="form-label">Nombre</label>
+                    <input type="text" className="form-control" id="Nombre1" name="nombre" value={formData.nombre} onChange={handleChange} />
                 </div>
-                <div className="form-group col-md-6">
-                    <label htmlFor="apellido">Apellido</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="apellido"
-                        value={apellido}
-                        onChange={(e) => setApellido(e.target.value)}
-                        placeholder="Apellido"
-                    />
+                <div className="mb-3">
+                    <label htmlFor="Apellido1" className="form-label">Apellido</label>
+                    <input type="text" className="form-control" id="Apellido1" name="apellido" value={formData.apellido} onChange={handleChange} />
                 </div>
-            </div>
-            <div className="form-row">
-                <div className="form-group col-md-6">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
-                    />
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email</label>
+                    <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} />
                 </div>
-                <div className="form-group col-md-6">
-                    <label htmlFor="dni">DNI</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="dni"
-                        value={dni}
-                        onChange={(e) => setDni(e.target.value)}
-                        placeholder="DNI"
-                    />
+                <div className="mb-3">
+                    <label htmlFor="dni" className="form-label">DNI</label>
+                    <input type="text" className="form-control" id="dni" name="dni" value={formData.dni} onChange={handleChange} />
                 </div>
-            </div>
-            <div className="form-row">
-                <div className="form-group col-md-6">
-                    <label htmlFor="tel">Teléfono</label>
-                    <input
-                        type="tel"
-                        className="form-control"
-                        id="tel"
-                        value={tel}
-                        onChange={(e) => setTel(e.target.value)}
-                        placeholder="Teléfono"
-                    />
+                <div className="mb-3">
+                    <label htmlFor="Telefono" className="form-label">Teléfono</label>
+                    <input type="text" className="form-control" id="Telefono" name="tel" value={formData.tel} onChange={handleChange} />
                 </div>
-                <div className="form-group col-md-6">
-                    <label htmlFor="consulta">Consulta</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="consulta"
-                        value={consulta}
-                        onChange={(e) => setConsulta(e.target.value)}
-                        placeholder="Consulta"
-                    />
+                <div className="mb-3">
+                    <label htmlFor="consulta" className="form-label">Consulta</label>
+                    <input type="text" className="form-control" id="consulta" name="consulta" value={formData.consulta} onChange={handleChange} />
                 </div>
-            </div>
-            <div className="form-group">
-                <label htmlFor="turno">Turno</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="turno"
-                    value={turno}
-                    onChange={(e) => setTurno(e.target.value)}
-                    placeholder="Turno"
-                />
-            </div>
-            <button type="submit" className="btn btn-primary btn-block">Agregar Paciente</button>
-        </form>
+                <div className="mb-3">
+                    <label htmlFor="Turnos" className="form-label">Turno</label>
+                    <input type="text" className="form-control" id="Turnos" name="turno" value={formData.turno} onChange={handleChange} />
+                </div>
+                <button type="submit" className="btn btn-primary w-100">Agregar Paciente</button>
+            </form>
+        </div>
     );
 };
 
